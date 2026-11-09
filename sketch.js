@@ -54,6 +54,24 @@ function draw()
   textSize(15);
   fill(245);
   text("Decessi totali sull’Everest, suddivisi per nazionalità", 40, 120);
+
+   noFill();
+  stroke(255);
+  strokeWeight(1);
+  rect(30, 135, 340, 65);
+
+  noStroke();
+  textSize(13);
+  fill(245);
+  text("Spessore della riga = numero di morti del paese", 40, 155);
+  text("Rosso scuro = più morti · Rosa chiaro = meno morti", 40, 173);
+
+  // Piccola sfumatura di esempio
+  for (let i = 0; i < 100; i++) 
+  {
+    fill(lerpColor(color(150, 20, 30), color(255, 150, 150), i / 99));
+    rect(40 + i * 1.5, 182, 1.5, 10);
+  }
  
   // yPos tiene conto dove disegnare il prossimo riquadro
   let xPos = (width - rectWidth) / 2;
